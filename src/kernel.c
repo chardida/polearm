@@ -1,4 +1,10 @@
-#define VIDEO_MEMORY (char*)0xB8000
+static inline unsigned char inb(unsigned short port) {
+    unsigned char result;
+    __asm__ volatile("inb %1, %0" : "=a"(result) : "Nd"(port));
+    return result;
+}
+
+#define VIDEO_MEMORY ((char*)0xB8000)
 #define VGA_WIDTH 80
 
 void print_char(char c, int col, int row) {
