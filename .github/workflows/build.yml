@@ -22,11 +22,11 @@ jobs:
           cd src
           chmod +x build.sh
           ./build.sh
-      - name: Upload kernel.bin
+      - name: Upload os.bin
         uses: actions/upload-artifact@v4
         with:
-            name: kernel
-            path: kernel.bin
+            name: os
+            path: src/os.bin
 
 
 
