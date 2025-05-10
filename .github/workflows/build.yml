@@ -20,6 +20,7 @@ jobs:
       - name: Run Makefile
         run: |
           cd src
-          make
+          chmod +x build.sh
+          ./build.sh
 
 
